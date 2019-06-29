@@ -14,3 +14,12 @@ class User(db.Model):
     name = db.Column(db.String(50))
     password = db.Column(db.String(50))
     admin = db.Column(db.Boolean)
+
+class CoinID(db.Model):
+    """CoindID represents a key/value pair of the coin market cap id and the
+       ticker symbol for the coin. This will allow users to query for coin 
+       information according to the symbol since this feature is not offered
+       on coin market cap.
+    """
+g   id = db.Column(db.Integer, primary_key=True, unique=True)
+    symbol = db.Column(db.String(10))
