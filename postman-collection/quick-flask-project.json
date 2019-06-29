@@ -1,0 +1,82 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Quick Flask Project",
+		"_postman_id": "89da4e0f-c948-1b76-f68c-6af5fc5d4117",
+		"description": "A quick flask based project.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create a User",
+			"request": {
+				"url": "http://127.0.0.1:5000/user",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"some-user-1\", \"password\": \"some-password\"}"
+				},
+				"description": "The first call, it creates a user in the DB."
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"url": "http://127.0.0.1:5000/login",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic c29tZS11c2VyLTE6c29tZS1wYXNzd29yZA==",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "The login endpoint for a created user. This will return a jwt for the session."
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"url": "http://127.0.0.1:5000/user",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJlY2RjN2JmNC1kYzhiLTQ5NDUtOTcxMS1lYTg5NmM5N2E5Y2QiLCJleHAiOjE1NjE4MjM1MzF9.pQ0iZdeeF7cuz2hOcRV89OokPVsQe0ndHtr1UvrqgKs",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Returns all users in the DB. Requires the use of the JWT."
+			},
+			"response": []
+		},
+		{
+			"name": "Get one user",
+			"request": {
+				"url": "http://127.0.0.1:5000/user/<public_id>",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJlY2RjN2JmNC1kYzhiLTQ5NDUtOTcxMS1lYTg5NmM5N2E5Y2QiLCJleHAiOjE1NjE4MjM1MzF9.pQ0iZdeeF7cuz2hOcRV89OokPVsQe0ndHtr1UvrqgKs",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Retrieves one user from the DB according to the passed public_id. Requires a JWT."
+			},
+			"response": []
+		}
+	]
+}
