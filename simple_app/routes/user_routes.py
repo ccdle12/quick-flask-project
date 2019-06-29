@@ -49,38 +49,7 @@ def create_user():
 
     return jsonify({'message': 'User created'})
 
-@app.route('/user', methods=['GET'])
-@token_required
-def get_all_user(current_user):
-    """Gets all registered users from the db.
-
-    Args:
-      None
-    Returns:
-      A list of user dicts as json.
-    """
-    users = User.query.all()
-
-    return jsonify([build_user_dict(user) for user in users])
-
-@app.route('/user/<public_id>', methods=['GET'])
-@token_required
-def get_one_user(current_user, public_id):
-    """Gets a single user from the db.
-
-    Args:
-      public_id: The public id of the a user.
-    Returns:
-      A user dict as json.
-    """
-    user = User.query.filter_by(public_id=public_id).first()
-
-    if not user:
-        return jsonify({'message': 'User not found'})
-
-    return jsonify({'user': build_user_dict(user)})
-
-@app.route('/login')
+@app.route('/login', methods=['GET'])
 def login():
     """Login for a registered user.
 
@@ -114,3 +83,34 @@ def login():
         return jsonify({'token': token.decode('UTF-8')})
 
     return error_response
+
+@app.route('/user', methods=['GET'])
+@token_required
+def get_all_user(current_user):
+    """Gets all registered users from the db.
+
+    Args:
+      None
+    Returns:
+      A list of user dicts as json.
+    """
+    users = User.query.all()
+
+    return jsonify([build_user_dict(user) for user in users])
+
+@app.route('/user/<public_id>', methods=['GET'])
+@token_required
+def get_one_user(current_user, public_id):
+    """Gets a single user from the db.
+
+    Args:
+      public_id: The public id of the a user.
+    Returns:
+      A user dict as json.
+    """
+    user = User.query.filter_by(public_id=public_id).first()
+
+    if not user:
+        return jsonify({'message': 'User not found'})
+
+    return jsonify({'user': build_user_dict(user)})
