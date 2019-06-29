@@ -1,13 +1,14 @@
 from simple_app import app
 from simple_app.services import cmc_service
 from simple_app.decorators import token_required
-# from simple_app.models import User
-# from simple_app.decorators import token_required
 from flask import jsonify
-# import uuid
-# import jwt
-# from werkzeug.security import generate_password_hash, check_password_hash
-# import datetime
+
+@app.before_first_request
+def activate_job():
+    coin_market_service = cmc_service.CMCService()
+    data = coin_market_service.map()
+
+    print(data)
 
 @app.route('/map')
 def map():
