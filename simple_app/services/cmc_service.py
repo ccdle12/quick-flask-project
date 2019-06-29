@@ -18,7 +18,9 @@ class CMCService():
       'X-CMC_PRO_API_KEY': app.config['CMC_SECRET_KEY']
     }
 
-    """ Session for each request. """
+    """ 
+    Session for each request. 
+    """
     _session = None
 
     def __init__(self):
