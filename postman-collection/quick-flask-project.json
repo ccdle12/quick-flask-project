@@ -2,7 +2,7 @@
 	"variables": [],
 	"info": {
 		"name": "Quick Flask Project",
-		"_postman_id": "89da4e0f-c948-1b76-f68c-6af5fc5d4117",
+		"_postman_id": "8ce96760-743b-69f2-12e7-2e602ec8451e",
 		"description": "A quick flask based project.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -39,7 +39,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "The login endpoint for a created user. This will return a jwt for the session."
 			},
 			"response": []
@@ -56,7 +59,10 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Returns all users in the DB. Requires the use of the JWT."
 			},
 			"response": []
@@ -73,8 +79,50 @@
 						"description": ""
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"description": "Retrieves one user from the DB according to the passed public_id. Requires a JWT."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quote",
+			"request": {
+				"url": {
+					"raw": "http://127.0.0.1:5000/quote?symbol=btc",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"quote"
+					],
+					"query": [
+						{
+							"key": "symbol",
+							"value": "btc",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI0ZjAzM2MzZS04NTRmLTRhYjgtOWY5OS1iMDRhODA0MGNhZDQiLCJleHAiOjE1NjE5MDc3NDB9.EBatpp0ZL4b_4_DNMl7azR17V4nvKNme1z6pY9ytWAc",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Gets a quote according to a coin symbol."
 			},
 			"response": []
 		}
