@@ -12,7 +12,7 @@
 $ pip install -r requirements.txt
 ```
 
-3. Create the config.py file in the instance folder.
+### 3. Create the config.py file in the instance folder.
 
 The instance folder is used to hold configuration variables that are meant to be
 kept secret and not checked in to any version control.
@@ -34,7 +34,7 @@ CMC_SECRET_KEY = '<Coin Market API Key>'
 SECRET_KEY = 'some-secret'
 ```
 
-4. Create the DB.
+### 4. Create the DB.
 
 Create the DB for project to run.
 
@@ -63,15 +63,15 @@ test.db
 
 ## Run the App
 
-1. Run the app
+### 1. Launch the app
 
 ```
 $ python run.py 
 ```
 
-2. Import `postman-collection/quick-flask-project.json` into Postman.
+### 2. Import `postman-collection/quick-flask-project.json` into Postman.
 
-3. Use the `Create a User` endpoint. 
+### 3. Use the `Create a User` endpoint. 
 
 The user endpoint needs to have a `name` and `password` sent in the body.
 This represents registration for the user.
@@ -82,7 +82,7 @@ Update the Body field with:
 {"name": "some-user-1", "password": "some-password"}
 ```
 
-4. Use the `Login` endpoint.
+### 4. Use the `Login` endpoint.
 
 The login endpoint needs to send a Basic Auth with the request. On postman
 this can be achieved by selecting the `Authorization` tab.
@@ -99,7 +99,7 @@ A token will be returned. This token will be needed for subsequent calls.
 }
 ```
 
-5. Call `Get all Users`
+### 5. Call `Get all Users`
 
 This will return all the users in the system.
 
@@ -115,7 +115,7 @@ Key                  Value
 x-access-token       eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI0ZjAzM2MzZS04NTRmLTRhYjgtOWY5OS1iMDRhODA0MGNhZDQiLCJleHAiOjE1NjE5MDc3NDB9.EBatpp0ZL4b_4_DNMl7azR17V4nvKNme1z6pY9ytWAc
 ```
 
-6. Call `Get Quote`
+### 6. Call `Get Quote`
 
 This endpoint will send a request to retrieve information and price of a given
 coin.
