@@ -2,9 +2,9 @@
 
 ## Setup
 
-1. Clone the project
+### 1. Clone the project
 
-2. Install dependencies
+### 2. Install dependencies
 
 (OPTIONAL) Setup a virtual environment for this project.
 
