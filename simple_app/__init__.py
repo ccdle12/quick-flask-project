@@ -8,6 +8,7 @@ app.config.from_pyfile('config.py')
 
 """ Connects to an instance of SQLALCHEMY """
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 from simple_app import models
