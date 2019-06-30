@@ -21,5 +21,5 @@ class CoinID(db.Model):
        information according to the symbol since this feature is not offered
        on coin market cap.
     """
-g   id = db.Column(db.Integer, primary_key=True, unique=True)
+    id = db.Column(db.Integer, primary_key=True, unique=True)
     symbol = db.Column(db.String(10))
