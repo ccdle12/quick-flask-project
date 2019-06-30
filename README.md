@@ -1,5 +1,56 @@
 # Flask Quick Project
 
+## About 
+
+A simple project that has two main functions:
+
+1. Allows a user to register/login and receive a session token.
+2. Allows a user to request a quote for a coin according to it's symbol.
+
+```
+http://127.0.0.1:5000/quote?symbol=btc
+
+{
+    "data": {
+        "1": {
+            "circulating_supply": 17789700,
+            "cmc_rank": 1,
+            "date_added": "2013-04-28T00:00:00.000Z",
+            "id": 1,
+            "last_updated": "2019-06-30T14:51:25.000Z",
+            "max_supply": 21000000,
+            "name": "Bitcoin",
+            "num_market_pairs": 7653,
+            "platform": null,
+            "quote": {
+                "USD": {
+                    "last_updated": "2019-06-30T14:51:25.000Z",
+                    "market_cap": 198552684846.34274,
+                    "percent_change_1h": -2.03405,
+                    "percent_change_24h": -6.78201,
+                    "percent_change_7d": 3.974,
+                    "price": 11161.1036075,
+                    "volume_24h": 27473185682.4524
+                }
+            },
+            "slug": "bitcoin",
+            "symbol": "BTC",
+            "tags": [
+                "mineable"
+            ],
+            "total_supply": 17789700
+        }
+    },
+    "status": {
+        "credit_count": 1,
+        "elapsed": 6,
+        "error_code": 0,
+        "error_message": null,
+        "timestamp": "2019-06-30T14:51:32.458Z"
+    }
+}
+```
+
 ## Setup
 
 ### 1. Clone the project
