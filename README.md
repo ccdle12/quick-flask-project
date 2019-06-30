@@ -51,6 +51,57 @@ http://127.0.0.1:5000/quote?symbol=btc
 }
 ```
 
+## End Points
+
+POST - Create a User
+
+```
+http://127.0.0.1:5000/user
+
+Body:
+{"name": "some-user-1", "password": "some-password"}
+```
+
+GET - Login
+
+```
+http://127.0.0.1:5000/login
+
+Authorization - Basic Auth:
+Username: some-user-1
+Password: some-password
+
+Returns:
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI0ZjAzM2MzZS04NTRmLTRhYjgtOWY5OS1iMDRhODA0MGNhZDQiLCJleHAiOjE1NjE5MDc3NDB9.EBatpp0ZL4b_4_DNMl7azR17V4nvKNme1z6pY9ytWAc
+```
+
+GET - Get all users
+
+```
+http://127.0.0.1:5000/user
+
+Headers:
+x-access-token    eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI0ZjAzM2MzZS04NTRmLTRhYjgtOWY5OS1iMDRhODA0MGNhZDQiLCJleHAiOjE1NjE5MDc3NDB9.EBatpp0ZL4b_4_DNMl7azR17V4nvKNme1z6pY9ytWAc
+```
+
+GET - Get a single user
+
+```
+http://127.0.0.1:5000/user/<public_id>
+
+Headers:
+x-access-token    eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI0ZjAzM2MzZS04NTRmLTRhYjgtOWY5OS1iMDRhODA0MGNhZDQiLCJleHAiOjE1NjE5MDc3NDB9.EBatpp0ZL4b_4_DNMl7azR17V4nvKNme1z6pY9ytWAc
+```
+
+GET - Get a quote
+
+```
+http://127.0.0.1:5000/quote?symbol=btc
+
+Headers:
+x-access-token    eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI0ZjAzM2MzZS04NTRmLTRhYjgtOWY5OS1iMDRhODA0MGNhZDQiLCJleHAiOjE1NjE5MDc3NDB9.EBatpp0ZL4b_4_DNMl7azR17V4nvKNme1z6pY9ytWAc
+```
+
 ## Setup
 
 ### 1. Clone the project
